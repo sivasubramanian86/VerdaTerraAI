@@ -12,7 +12,6 @@ import Help from './components/Help';
 import ThemeProvider from './ThemeProvider';
 import './design-tokens.css';
 import './index.css';
-import ThemeProvider from './ThemeProvider';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
