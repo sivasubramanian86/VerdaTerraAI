@@ -20,10 +20,9 @@ function App() {
 
   return (
     <ThemeProvider>
-    <div className="app-shell">
-      <a className="skip-link" href="#main-content">Skip to dashboard content</a>
-      <TopNav onToggle={() => setSidebarOpen(s => !s)} />
-      <div className="app-layout">
+      <div className="app-shell">
+        <a className="skip-link" href="#main-content">Skip to dashboard content</a>
+        <TopNav onToggle={() => setSidebarOpen(s => !s)} />
         {sidebarOpen && <Sidebar current={currentView} onChange={setCurrentView} />}
 
         <main id="main-content" className="main-panel" tabIndex="-1">
@@ -47,7 +46,6 @@ function App() {
           </div>
         </main>
       </div>
-    </div>
     </ThemeProvider>
   );
 }
