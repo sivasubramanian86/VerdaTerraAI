@@ -1,0 +1,12 @@
+[
+  {
+    "query": "The public toilet smells heavily of ammonia.",
+    "expected_keyword": "Swachh Bharat",
+    "expected_checklist_item": "Ammonia levels < 50 ppm"
+  },
+  {
+    "query": "The kitchen has an open trash can.",
+    "expected_keyword": "FSSAI",
+    "expected_checklist_item": "Procure covers"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "loc_bengaluru": {
+    "name": "Bengaluru",
+    "hierarchy": {
+      "state": "Karnataka",
+      "district": "Bengaluru Urban",
+      "city": "Bengaluru"
+    },
+    "locales": ["en-IN", "kn-IN"],
+    "policy_packs": ["bbmp_swm_rules_2020", "national_swachh_bharat"],
+    "routing_overrides": {
+      "SWM Dept": "BBMP Solid Waste Management",
+      "Water Board": "BWSSB"
+    }
+  },
+  "loc_mumbai": {
+    "name": "Mumbai",
+    "hierarchy": {
+      "state": "Maharashtra",
+      "district": "Mumbai City",
+      "city": "Mumbai"
+    },
+    "locales": ["en-IN", "mr-IN", "hi-IN"],
+    "policy_packs": ["bmc_hygiene_guidelines", "national_swachh_bharat"],
+    "routing_overrides": {
+      "SWM Dept": "BMC Solid Waste",
+      "Water Board": "BMC Hydraulics"
+    }
+  },
+  "loc_delhi": {
+    "name": "Delhi",
+    "hierarchy": {
+      "state": "Delhi",
+      "district": "New Delhi",
+      "city": "Delhi"
+    },
+    "locales": ["hi-IN", "en-IN"],
+    "policy_packs": ["mcd_sanitation_bylaws", "national_swachh_bharat"],
+    "routing_overrides": {
+      "SWM Dept": "MCD Sanitation",
+      "Water Board": "Delhi Jal Board"
+    }
+  }
+}

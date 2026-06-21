@@ -1,0 +1,27 @@
+{
+  "hygiene_cases": [
+    {"id": "h1", "desc": "Clean reading, no historical incidents", "input_criticality": 0, "mock_open_incidents": 0, "expected_score_range": [90, 100], "expected_risk": "Low"},
+    {"id": "h2", "desc": "Minor anomaly, no historical", "input_criticality": 15, "mock_open_incidents": 0, "expected_score_range": [80, 85], "expected_risk": "Low"},
+    {"id": "h3", "desc": "Moderate anomaly, no historical", "input_criticality": 25, "mock_open_incidents": 0, "expected_score_range": [70, 75], "expected_risk": "Medium"},
+    {"id": "h4", "desc": "Critical anomaly, no historical", "input_criticality": 40, "mock_open_incidents": 0, "expected_score_range": [55, 60], "expected_risk": "Medium"},
+    {"id": "h5", "desc": "Clean reading, 2 historical incidents", "input_criticality": 0, "mock_open_incidents": 2, "expected_score_range": [75, 80], "expected_risk": "Medium"},
+    {"id": "h6", "desc": "Clean reading, 5 historical incidents", "input_criticality": 0, "mock_open_incidents": 5, "expected_score_range": [45, 50], "expected_risk": "Medium"},
+    {"id": "h7", "desc": "Critical anomaly, 5 historical incidents", "input_criticality": 40, "mock_open_incidents": 5, "expected_score_range": [0, 10], "expected_risk": "High"},
+    {"id": "h8", "desc": "Minor anomaly, 3 historical incidents", "input_criticality": 10, "mock_open_incidents": 3, "expected_score_range": [55, 60], "expected_risk": "Medium"},
+    {"id": "h9", "desc": "Severe anomaly (capped penalty), 0 historical", "input_criticality": 100, "mock_open_incidents": 0, "expected_score_range": [55, 60], "expected_risk": "Medium"},
+    {"id": "h10", "desc": "Severe anomaly, 10 historical incidents", "input_criticality": 100, "mock_open_incidents": 10, "expected_score_range": [0, 10], "expected_risk": "High"}
+  ],
+  "routing_cases": [
+    {"id": "r1", "desc": "Standard Waste Issue", "water_quality_issues": false, "risk_classification": "Low", "expected_dept": "BBMP Solid Waste Management", "expected_escalation": null},
+    {"id": "r2", "desc": "Medium Waste Issue", "water_quality_issues": false, "risk_classification": "Medium", "expected_dept": "BBMP Solid Waste Management", "expected_escalation": null},
+    {"id": "r3", "desc": "Critical Waste Escalation", "water_quality_issues": false, "risk_classification": "High", "expected_dept": "BBMP Solid Waste Management", "expected_escalation": "Zonal Commissioner"},
+    {"id": "r4", "desc": "Standard Water Issue", "water_quality_issues": true, "risk_classification": "Low", "expected_dept": "BWSSB", "expected_escalation": null},
+    {"id": "r5", "desc": "Medium Water Issue", "water_quality_issues": true, "risk_classification": "Medium", "expected_dept": "BWSSB", "expected_escalation": null},
+    {"id": "r6", "desc": "Critical Water Escalation", "water_quality_issues": true, "risk_classification": "High", "expected_dept": "BWSSB", "expected_escalation": "Zonal Commissioner"},
+    {"id": "r7", "desc": "Missing Risk defaults properly", "water_quality_issues": false, "risk_classification": null, "expected_dept": "BBMP Solid Waste Management", "expected_escalation": null},
+    {"id": "r8", "desc": "Missing water defaults properly", "water_quality_issues": null, "risk_classification": "High", "expected_dept": "BBMP Solid Waste Management", "expected_escalation": "Zonal Commissioner"},
+    {"id": "r9", "desc": "Invalid risk string defaults properly", "water_quality_issues": true, "risk_classification": "UNKNOWN", "expected_dept": "BWSSB", "expected_escalation": null},
+    {"id": "r10", "desc": "Missing all inputs", "water_quality_issues": null, "risk_classification": null, "expected_dept": "BBMP Solid Waste Management", "expected_escalation": null}
+  ]
+}
+
