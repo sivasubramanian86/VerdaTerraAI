@@ -3,6 +3,7 @@ import ReportForm from './components/ReportForm';
 import Dashboard from './components/Dashboard';
 import InspectorView from './components/InspectorView';
 import AgentPipeline from './components/AgentPipeline';
+import AuditLog from './components/AuditLog';
 import Sidebar from './components/Sidebar';
 import TopNav from './components/TopNav';
 import SettingsPanel from './components/SettingsPanel';
@@ -35,6 +36,7 @@ function App() {
             {currentView === 'dashboard' && (
               <>
                 <AgentPipeline />
+                <AuditLog />
                 <Dashboard />
               </>
             )}
