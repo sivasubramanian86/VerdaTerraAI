@@ -71,3 +71,10 @@ AI_EVALUATION.md
 *.db-wal
 *.db-shm
 
+# Gitleaks artifacts (local scans)
+gitleaks.zip
+gitleaks_bin/
+gitleaks-results.sarif
+gitleaks-results.sarif.zip
+gitleaks-*.zip
+

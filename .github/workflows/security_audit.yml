@@ -13,7 +13,14 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Run gitleaks
-        uses: gitleaks/gitleaks-action@v2
+      - name: Run gitleaks (download and run)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          VERSION=8.24.3
+          TARGET_DIR=/tmp/gitleaks-${VERSION}
+          mkdir -p "$TARGET_DIR"
+          curl -sSL "https://github.com/zricethezav/gitleaks/releases/download/v${VERSION}/gitleaks_${VERSION}_linux_x64.tar.gz" -o /tmp/gitleaks.tar.gz
+          tar -xzf /tmp/gitleaks.tar.gz -C "$TARGET_DIR"
+          "$TARGET_DIR/gitleaks" detect --redact -v --exit-code=2 --report-format=sarif --report-path=results.sarif .
